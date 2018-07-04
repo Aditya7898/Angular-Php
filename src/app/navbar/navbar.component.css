@@ -1,0 +1,38 @@
+/*NAVIGATION*/
+.navbar{
+    background-color:#222222;
+    text-transform: uppercase;
+    font-family:'PT Sans Narrow', Arial,sans-serif;
+    font-weight:700;
+
+  }
+  .navbar  a{
+    color:white !important;
+    opacity:0.7 !important;
+  }
+  
+  .navbar a:hover{
+    opacity:1.0 !important;
+    background-color:#111111 !important;
+  }
+  
+  .navbar .acitve{
+    background-color:#111111!important;
+  }
+  
+  .dropdown-toggle{
+    background-color:#111111 !important;
+  }
+  
+  .dropdown-menu a{
+    background-color:white!important;
+    color:orange!important;
+    font-weight: 700!important;
+    font-size:15px;
+    cursor: pointer;
+  }
+  .dropdown-menu a:hover{
+    background-color:white!important;
+    color:orange!important;
+  }
+  /*End of Navigation*/

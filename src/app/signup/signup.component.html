@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Full Name :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Enter Full Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Email :</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter Email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Contact :</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="contact" formControlName="contact" placeholder="Enter Contact number">
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">City:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="city" formControlName="city" placeholder="Enter City">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Blood Group</label>
+          <div class="col-sm-10">
+            <select class="form-control" formControlName="bloodGroup" id="sel1">
+              <option></option>
+              <option *ngFor="let group of bloodGroups" [value]="group.value" class="form-control">
+                {{ group.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Password:</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-lg-3"> </div>
+  </div>
+</div>
