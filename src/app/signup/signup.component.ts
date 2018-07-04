@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { Http } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,7 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -37,6 +38,9 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
       console.log(this.signupForm.value);
+       this.http.post('http://localhost/phpapi/insert.php', this.signupForm.value).subscribe(res => {
+         console.log(res);
+       });
   }
 
 }
