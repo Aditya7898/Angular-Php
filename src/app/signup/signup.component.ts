@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,7 @@ export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private auth: AuthService) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -38,9 +39,10 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
       console.log(this.signupForm.value);
-       this.http.post('http://localhost/phpapi/insert.php', this.signupForm.value).subscribe(res => {
-         console.log(res);
-       });
+      this.auth.signup(this.signupForm.value);
   }
 
-}
+  reset() {
+      this.signupForm.reset();
+  }
+ }

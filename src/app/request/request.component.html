@@ -1,0 +1,90 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        
+        <form [formGroup]="requestForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+  
+          <div class="form-group">
+            <label class="control-label col-sm-3">Patient Name:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Pname" formControlName="Pname" placeholder="Enter Patient Name">
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-sm-3">Blood Group</label>
+              <div class="col-sm-9">
+                <select class="form-control" formControlName="Pbloodgroup" placeholder="Chhose Blood Group" id="sel1">
+                  <option></option>
+                  <option *ngFor="let group of bloodGroups" [value]="group.value" class="form-control">
+                    {{ group.value }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">City:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="Pcity" formControlName="Pcity" placeholder="Enter City">
+                </div>
+              </div>
+
+  
+          <div class="form-group">
+            <label class="control-label col-sm-3">Hospital Address:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="Paddress" formControlName="Paddress" placeholder="Enter Hospital Address">
+            </div>
+          </div>
+  
+          <div class="form-group">
+              <label class="control-label col-sm-3">Doctor Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Pdoctor" formControlName="Pdoctor" placeholder="Enter Doctor Name">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-sm-3">Contact Name:</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="Cname" formControlName="Cname" placeholder="Enter Contact Name">
+              </div>
+            </div>
+  
+            <div class="form-group">
+                <label class="control-label col-sm-3">Contact Email:</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" id="Cemail" formControlName="Cemail" placeholder="Enter Contact Email">
+                </div>
+            </div>
+  
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">Contact/ Mobile:</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="Ccontact" formControlName="Ccontact" placeholder="Enter Contact Number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">Date</label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" id="Cdate" formControlName="Cdate" placeholder="Enter Date when required">
+                </div>
+            </div>
+  
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button (click)="reset()" class="btn btn-default">Reset</button>
+            </div>
+          </div>
+  
+        </form>
+      </div>
+      <div class="col-lg-3"> </div>
+    </div>
+  </div>

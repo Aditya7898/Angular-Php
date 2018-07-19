@@ -1,6 +1,6 @@
 <?php
 include "db.php";
-$sql = "SELECT * FROM employees ORDER BY _id DESC";
+$sql = "SELECT * FROM requests ORDER BY _id DESC";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
